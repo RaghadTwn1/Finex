@@ -12,6 +12,227 @@
 <body>
 
   <!-- ════════════════════════════════════════════
+       ONBOARDING OVERLAY
+  ════════════════════════════════════════════ -->
+  <div id="onboarding-overlay">
+
+    <!-- ── STEP 1: Registration ── -->
+    <div class="ob-screen active" id="ob-step1">
+      <div class="ob-card">
+        <div class="ob-logo">🌿 <span>Finex</span></div>
+        <div class="ob-step-badge">الخطوة 1 من 3</div>
+        <h2 class="ob-title">أهلاً بك! 👋</h2>
+        <p class="ob-sub">أنشئ حسابك وابدأ رحلتك المالية الذكية</p>
+
+        <div class="ob-field">
+          <label class="ob-label">الاسم الكامل</label>
+          <input class="ob-input" id="ob-name" type="text" placeholder="أدخل اسمك الكامل" />
+        </div>
+
+        <div class="ob-field">
+          <label class="ob-label">البريد الإلكتروني</label>
+          <input class="ob-input" id="ob-email" type="email" placeholder="example@email.com" />
+        </div>
+
+        <div class="ob-field">
+          <label class="ob-label">رقم الهوية</label>
+          <input class="ob-input" id="ob-id" type="text" placeholder="أدخل رقم الهوية" maxlength="10" />
+        </div>
+
+        <div class="ob-field">
+          <label class="ob-label">البنك المرتبط</label>
+          <select class="ob-select" id="ob-bank">
+            <option value="" disabled selected>اختر البنك</option>
+            <option value="a">بنك أ</option>
+            <option value="b">بنك ب</option>
+            <option value="c">بنك ج</option>
+            <option value="d">بنك ح</option>
+            <option value="e">بنك خ</option>
+          </select>
+        </div>
+
+        <!-- ── الأهداف section ── -->
+        <div class="ob-goals-section">
+          <p class="ob-sliders-title">🎯 الأهداف</p>
+          <p class="ob-goals-sub">اختر هدفاً أو أكثر تريد تحقيقه</p>
+          <div class="ob-goals-grid">
+            <label class="ob-goal-chip"><input type="checkbox" value="house" /><span>🏠 شراء منزل</span></label>
+            <label class="ob-goal-chip"><input type="checkbox" value="car" /><span>🚗 شراء سيارة</span></label>
+            <label class="ob-goal-chip"><input type="checkbox" value="travel" /><span>✈️ السفر</span></label>
+            <label class="ob-goal-chip"><input type="checkbox" value="invest" /><span>📈 الاستثمار</span></label>
+            <label class="ob-goal-chip"><input type="checkbox" value="emergency" /><span>🛡️ صندوق طوارئ</span></label>
+            <label class="ob-goal-chip"><input type="checkbox" value="education" /><span>🎓 التعليم</span></label>
+            <label class="ob-goal-chip ob-goal-chip-other"><input type="checkbox" value="other" /><span>✏️ هدف آخر</span></label>
+          </div>
+          <div class="ob-goals-amounts">
+            <div class="ob-field">
+              <label class="ob-label">المبلغ المستهدف شهرياً (ر.س)</label>
+              <input class="ob-input" id="ob-goal-monthly" type="number" placeholder="مثال: 500" min="0" />
+            </div>
+            <div class="ob-field">
+              <label class="ob-label">المبلغ المستهدف سنوياً (ر.س)</label>
+              <input class="ob-input" id="ob-goal-yearly" type="number" placeholder="مثال: 6000" min="0" />
+            </div>
+          </div>
+        </div>
+
+        <button class="ob-btn-primary" id="ob-next1">التالي ←</button>
+        <p class="ob-error" id="ob-err1"></p>
+
+        <p class="ob-footer-credit">صُنع بحب ❤️ من قِبَل <strong>Finex Team</strong> لهاكاثون أمد</p>
+      </div>
+    </div>
+
+    <!-- ── STEP 2: Financial Setup ── -->
+    <div class="ob-screen" id="ob-step2">
+      <div class="ob-card ob-card-wide">
+        <div class="ob-logo">🌿 <span>Finex</span></div>
+        <div class="ob-step-badge">الخطوة 2 من 3</div>
+        <h2 class="ob-title">إعداد ميزانيتك 💰</h2>
+        <p class="ob-sub">أخبرنا عن وضعك المالي لنحلّله بالذكاء الاصطناعي</p>
+
+        <div class="ob-field">
+          <label class="ob-label">الراتب الشهري (ريال سعودي)</label>
+          <input class="ob-input" id="ob-salary" type="number" placeholder="مثال: 8500" min="0" />
+        </div>
+
+        <p class="ob-sliders-title">توزيع الميزانية (نسب مئوية)</p>
+
+        <div class="ob-sliders-grid">
+          <div class="ob-slider-row">
+            <div class="ob-slider-top">
+              <span class="ob-slider-label">💰 الدخل الشهري</span>
+              <span class="ob-slider-val" id="val-income">100%</span>
+            </div>
+            <input class="ob-slider" id="sl-income" type="range" min="0" max="100" value="100" />
+          </div>
+
+          <div class="ob-slider-row">
+            <div class="ob-slider-top">
+              <span class="ob-slider-label">🏠 الالتزامات الثابتة</span>
+              <span class="ob-slider-val" id="val-fixed">35%</span>
+            </div>
+            <input class="ob-slider" id="sl-fixed" type="range" min="0" max="100" value="35" />
+          </div>
+
+          <div class="ob-slider-row">
+            <div class="ob-slider-top">
+              <span class="ob-slider-label">🛒 المصروفات اليومية</span>
+              <span class="ob-slider-val" id="val-daily">20%</span>
+            </div>
+            <input class="ob-slider" id="sl-daily" type="range" min="0" max="100" value="20" />
+          </div>
+
+          <div class="ob-slider-row">
+            <div class="ob-slider-top">
+              <span class="ob-slider-label">🎮 الترفيه</span>
+              <span class="ob-slider-val" id="val-entertain">10%</span>
+            </div>
+            <input class="ob-slider" id="sl-entertain" type="range" min="0" max="100" value="10" />
+          </div>
+
+          <div class="ob-slider-row">
+            <div class="ob-slider-top">
+              <span class="ob-slider-label">🏦 الادخار</span>
+              <span class="ob-slider-val" id="val-save">25%</span>
+            </div>
+            <input class="ob-slider" id="sl-save" type="range" min="0" max="100" value="25" />
+          </div>
+
+          <div class="ob-slider-row">
+            <div class="ob-slider-top">
+              <span class="ob-slider-label">🤲 الصدقات والزكاة</span>
+              <span class="ob-slider-val" id="val-zakat">10%</span>
+            </div>
+            <input class="ob-slider" id="sl-zakat" type="range" min="0" max="100" value="10" />
+          </div>
+        </div>
+
+        <button class="ob-btn-primary ob-btn-analyze" id="ob-analyze">🤖 تحليل بياناتي</button>
+        <p class="ob-error" id="ob-err2"></p>
+
+        <p class="ob-footer-credit">صُنع بحب ❤️ من قِبَل <strong>Finex Team</strong> لهاكاثون أمد</p>
+      </div>
+    </div>
+
+    <!-- ── STEP 3: AI Loading ── -->
+    <div class="ob-screen" id="ob-step3">
+      <div class="ob-loading-card">
+        <div class="ob-spinner"></div>
+        <p class="ob-loading-text">جاري تحليل بياناتك باستخدام الذكاء الاصطناعي...</p>
+        <div class="ob-loading-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <p class="ob-footer-credit" style="margin-top:2rem;">صُنع بحب ❤️ من قِبَل <strong>Finex Team</strong> لهاكاثون أمد</p>
+      </div>
+    </div>
+
+    <!-- ── STEP 4: AI Goal Analysis Result ── -->
+    <div class="ob-screen" id="ob-step4">
+      <div class="ob-card ob-card-wide">
+        <div class="ob-logo">🌿 <span>Finex</span></div>
+        <div class="ob-step-badge" style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;">🤖 تحليل الذكاء الاصطناعي</div>
+        <h2 class="ob-title">نتائج تحليلك المالي ✨</h2>
+        <p class="ob-sub">بناءً على بياناتك، هذا ما توصّل إليه الذكاء الاصطناعي</p>
+
+        <!-- Goal completion % -->
+        <div class="ai-result-block">
+          <div class="ai-result-row">
+            <div class="ai-result-card">
+              <div class="ai-rc-icon">🎯</div>
+              <div class="ai-rc-label">نسبة إنجاز الهدف</div>
+              <div class="ai-rc-value" id="ai-goal-pct">24%</div>
+              <div class="ai-progress-bar"><div class="ai-progress-fill" id="ai-goal-bar" style="width:24%"></div></div>
+            </div>
+            <div class="ai-result-card">
+              <div class="ai-rc-icon">📅</div>
+              <div class="ai-rc-label">الوقت المتوقع للوصول</div>
+              <div class="ai-rc-value" id="ai-months">18 شهراً</div>
+            </div>
+            <div class="ai-result-card green-card">
+              <div class="ai-rc-icon">💰</div>
+              <div class="ai-rc-label">الادخار الشهري المقترح</div>
+              <div class="ai-rc-value" id="ai-monthly-save">1,700 ر.س</div>
+            </div>
+            <div class="ai-result-card">
+              <div class="ai-rc-icon">❤️</div>
+              <div class="ai-rc-label">توقع الصحة المالية</div>
+              <div class="ai-rc-value" id="ai-health">82 / 100</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spending recommendations -->
+        <div class="ai-recs-list">
+          <div class="ai-rec-item positive">
+            <span class="ai-rec-dot"></span>
+            <p>نسبة ادخارك ممتازة — استمر في الحفاظ عليها لتحقيق هدفك بسرعة أكبر.</p>
+          </div>
+          <div class="ai-rec-item warning">
+            <span class="ai-rec-dot"></span>
+            <p id="ai-rec-entertain">حاول تقليص الترفيه بنسبة 5% شهرياً لتوفير 425 ريال إضافي.</p>
+          </div>
+          <div class="ai-rec-item tip">
+            <span class="ai-rec-dot"></span>
+            <p>استثمار 30% من مدخراتك سيُسرّع وصولك للهدف بمعدل 40%.</p>
+          </div>
+        </div>
+
+        <!-- Motivational message -->
+        <div class="ai-motivation">
+          <span class="ai-motiv-emoji">🚀</span>
+          <p id="ai-motiv-msg">أنت على الطريق الصحيح! مدينتك ستنمو وأهدافك ستتحقق بإذن الله.</p>
+        </div>
+
+        <button class="ob-btn-primary" id="ob-enter-app">ادخل إلى التطبيق 🏘️</button>
+
+        <p class="ob-footer-credit">صُنع بحب ❤️ من قِبَل <strong>Finex Team</strong> لهاكاثون أمد</p>
+      </div>
+    </div>
+
+  </div><!-- end onboarding-overlay -->
+
+  <!-- ════════════════════════════════════════════
        NAV BAR
   ════════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
@@ -22,8 +243,11 @@
     <div class="nav-links">
       <button class="nav-btn active" data-page="home">الرئيسية</button>
       <button class="nav-btn" data-page="analysis">التحليل المالي</button>
+      <button class="nav-btn" data-page="goals">الأهداف</button>
+      <button class="nav-btn" data-page="tasks">المهام</button>
       <button class="nav-btn" data-page="city">مدينتي</button>
       <button class="nav-btn" data-page="shop">المتجر</button>
+      <button class="nav-btn" data-page="profile">حسابي</button>
     </div>
     <div class="nav-stats">
       <span class="nav-stat"><span class="stat-icon">🪙</span><span id="nav-coins">2450</span></span>
@@ -345,6 +569,119 @@
   </div><!-- end page-analysis -->
 
   <!-- ════════════════════════════════════════════
+       PAGE: GOALS
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-goals">
+
+    <div class="page-header">
+      <h1 class="page-title">أهدافي المالية</h1>
+      <p class="page-sub">تابع تقدمك نحو تحقيق أهدافك المالية خطوة بخطوة</p>
+    </div>
+
+    <!-- Goals summary -->
+    <div class="goals-summary">
+      <div class="goals-summary-item">
+        <span class="gs-icon">🎯</span>
+        <div><div class="gs-val" id="goals-active-count">4</div><div class="gs-label">أهداف نشطة</div></div>
+      </div>
+      <div class="goals-summary-item">
+        <span class="gs-icon">💰</span>
+        <div><div class="gs-val" id="goals-saved-total">18,500 ر.س</div><div class="gs-label">إجمالي المدّخر</div></div>
+      </div>
+      <div class="goals-summary-item">
+        <span class="gs-icon">📈</span>
+        <div><div class="gs-val">42%</div><div class="gs-label">متوسط الإنجاز</div></div>
+      </div>
+    </div>
+
+    <!-- Goals list -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">الأهداف الجارية</h2>
+        <span class="section-badge">قيد التنفيذ</span>
+      </div>
+      <div class="goals-grid" id="goals-grid">
+
+        <div class="goal-card">
+          <div class="goal-card-top">
+            <div class="goal-emoji">🏠</div>
+            <div class="goal-info">
+              <div class="goal-name">شراء منزل</div>
+              <div class="goal-target">الهدف: 300,000 ر.س</div>
+            </div>
+            <div class="goal-pct">28%</div>
+          </div>
+          <div class="goal-bar"><div class="goal-bar-fill" style="width:28%"></div></div>
+          <div class="goal-meta">
+            <span>المدّخر: 84,000 ر.س</span>
+            <span>المتبقي: 216,000 ر.س</span>
+          </div>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-card-top">
+            <div class="goal-emoji">🚗</div>
+            <div class="goal-info">
+              <div class="goal-name">شراء سيارة</div>
+              <div class="goal-target">الهدف: 80,000 ر.س</div>
+            </div>
+            <div class="goal-pct">55%</div>
+          </div>
+          <div class="goal-bar"><div class="goal-bar-fill" style="width:55%"></div></div>
+          <div class="goal-meta">
+            <span>المدّخر: 44,000 ر.س</span>
+            <span>المتبقي: 36,000 ر.س</span>
+          </div>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-card-top">
+            <div class="goal-emoji">✈️</div>
+            <div class="goal-info">
+              <div class="goal-name">السفر</div>
+              <div class="goal-target">الهدف: 15,000 ر.س</div>
+            </div>
+            <div class="goal-pct">70%</div>
+          </div>
+          <div class="goal-bar"><div class="goal-bar-fill" style="width:70%"></div></div>
+          <div class="goal-meta">
+            <span>المدّخر: 10,500 ر.س</span>
+            <span>المتبقي: 4,500 ر.س</span>
+          </div>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-card-top">
+            <div class="goal-emoji">🛡️</div>
+            <div class="goal-info">
+              <div class="goal-name">صندوق الطوارئ</div>
+              <div class="goal-target">الهدف: 25,000 ر.س</div>
+            </div>
+            <div class="goal-pct">16%</div>
+          </div>
+          <div class="goal-bar"><div class="goal-bar-fill" style="width:16%"></div></div>
+          <div class="goal-meta">
+            <span>المدّخر: 4,000 ر.س</span>
+            <span>المتبقي: 21,000 ر.س</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Motivational tip -->
+    <section class="motivational-section">
+      <div class="motivational-card">
+        <div class="motiv-emoji">🌟</div>
+        <h3>أنت تقترب من تحقيق هدف السفر!</h3>
+        <p>تبقّى 4,500 ريال فقط. وفّر 750 ريال شهرياً وستحققه خلال 6 أشهر.</p>
+        <button class="btn-primary" data-goto="tasks">شاهد مهامك 📋</button>
+      </div>
+    </section>
+
+  </div><!-- end page-goals -->
+
+  <!-- ════════════════════════════════════════════
        PAGE: MY CITY
   ════════════════════════════════════════════ -->
   <div class="page" id="page-city">
@@ -359,15 +696,59 @@
       </div>
     </div>
 
-    <div class="city-hint">اسحب لاستكشاف مدينتك 🗺️ • اشترِ عناصر من المتجر لتزيينها</div>
+    <!-- ── How the city works (intro banner) ── -->
+    <div class="city-intro">
+      <div class="city-intro-icon">🏙️</div>
+      <div class="city-intro-text">
+        <strong>كيف تنمو مدينتك؟</strong>
+        أكمل مهامك المالية لتكسب العملات، ثم اشترِ مبانٍ وعناصر من المتجر لتظهر فوراً في مدينتك. كلما تحسّنت عاداتك المالية، توسّعت مدينتك وامتلأت قطعها الفارغة!
+      </div>
+    </div>
+
+    <!-- ── City growth progress ── -->
+    <div class="city-progress-box">
+      <div class="city-progress-head">
+        <span class="cp-title">🌱 نمو المدينة</span>
+        <span class="cp-count" id="city-progress-count">0 / 18 عنصر</span>
+      </div>
+      <div class="city-progress-bar"><div class="city-progress-fill" id="city-progress-fill" style="width:0%"></div></div>
+      <div class="city-progress-hint" id="city-progress-hint">ابدأ بشراء أول عنصر من المتجر لتنمو مدينتك! 🌿</div>
+    </div>
+
+    <!-- ── Objective hints ── -->
+    <div class="city-objectives">
+      <div class="city-obj-chip">🎯 أكمل مهامك لكسب العملات</div>
+      <div class="city-obj-chip">🛒 اشترِ عناصر لتعمير القطع الفارغة</div>
+      <div class="city-obj-chip">⬆️ ارفع مستواك لفتح مبانٍ جديدة</div>
+    </div>
+
+    <div class="city-hint">اسحب لاستكشاف مدينتك 🗺️ • القطع المنقّطة (+) جاهزة لاستقبال مشترياتك</div>
 
     <div class="city-viewport" id="city-viewport">
       <div class="city-map" id="city-map">
-        <!-- Canvas for the city background -->
-        <canvas id="city-canvas" width="1600" height="1200"></canvas>
-        <!-- Items placed in the city will be added here as DOM elements -->
+        <!-- Single canvas: background + all buildings drawn here -->
+        <canvas id="city-canvas" width="1400" height="1000"></canvas>
+        <!-- Building labels rendered as DOM (so they scale with map) -->
+        <div id="city-labels-layer"></div>
+        <!-- Purchased items drop here -->
         <div id="city-items-layer"></div>
       </div>
+    </div>
+
+    <!-- Bottom nav bar like the screenshot -->
+    <div class="city-bottom-bar">
+      <button class="cbb-btn" data-goto="home">
+        <span class="cbb-icon">📋</span>
+        <span class="cbb-label">المهام</span>
+      </button>
+      <button class="cbb-btn cbb-center" data-goto="shop">
+        <span class="cbb-icon">🏪</span>
+        <span class="cbb-label">المتجر</span>
+      </button>
+      <button class="cbb-btn" data-goto="analysis">
+        <span class="cbb-icon">📊</span>
+        <span class="cbb-label">التقارير</span>
+      </button>
     </div>
   </div><!-- end page-city -->
 
@@ -376,25 +757,280 @@
   ════════════════════════════════════════════ -->
   <div class="page" id="page-shop">
 
-    <div class="page-header">
-      <h1 class="page-title">متجر المدينة</h1>
-      <p class="page-sub">اشترِ عناصر جميلة لتزيين مدينتك وتنميتها</p>
+    <div class="shop-header-row">
+      <button class="shop-back-btn" data-goto="city">← مدينتي</button>
+      <h1 class="shop-title">🏪 المتجر</h1>
+      <div class="shop-coins-pill">🪙 <span id="shop-coins-display">2,450</span></div>
     </div>
 
-    <div class="shop-coins-bar">
-      <span>رصيدك الحالي:</span>
-      <strong>🪙 <span id="shop-coins-display">2,450</span> عملة</strong>
+    <p class="shop-sub">اشترِ مباني وزيّن مدينتك — كل مبنى يُضاف فوراً!</p>
+
+    <!-- Shop tabs -->
+    <div class="shop-tabs">
+      <button class="shop-tab active" data-tab="buildings">🏠 مباني</button>
+      <button class="shop-tab" data-tab="nature">🌳 طبيعة</button>
+      <button class="shop-tab" data-tab="deco">✨ ديكور</button>
     </div>
 
     <div class="shop-grid" id="shop-grid">
       <!-- filled by JS -->
     </div>
 
-    <div class="shop-back-wrap">
-      <button class="btn-primary" data-goto="city">← العودة إلى مدينتي</button>
+  </div><!-- end page-shop -->
+
+  <!-- ════════════════════════════════════════════
+       PAGE: TASKS
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-tasks">
+
+    <div class="page-header">
+      <h1 class="page-title">المهام</h1>
+      <p class="page-sub">أنجز مهامك اليومية والشهرية والسنوية واكسب مكافآت</p>
     </div>
 
-  </div><!-- end page-shop -->
+    <!-- XP + Coins summary -->
+    <div class="tasks-summary">
+      <div class="tasks-summary-item">
+        <span class="ts-icon">🪙</span>
+        <div><div class="ts-val" id="tasks-coins-display">2,450</div><div class="ts-label">عملاتك</div></div>
+      </div>
+      <div class="tasks-summary-item">
+        <span class="ts-icon">⚡</span>
+        <div><div class="ts-val" id="tasks-xp-display">1,280</div><div class="ts-label">نقاط XP</div></div>
+      </div>
+      <div class="tasks-summary-item">
+        <span class="ts-icon">✅</span>
+        <div><div class="ts-val" id="tasks-done-display">0 / 9</div><div class="ts-label">مكتملة</div></div>
+      </div>
+    </div>
+
+    <!-- ── Daily Tasks ── -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">📅 المهام اليومية</h2>
+        <span class="section-badge" id="daily-badge">0 / 3</span>
+      </div>
+      <div class="tasks-list" id="tasks-daily">
+        <div class="task-item" data-id="d1" data-coins="20" data-xp="10">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">ابقَ ضمن حد الإنفاق اليوم</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:60%"></div></div>
+              <span class="task-progress-lbl">60%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+20 🪙</span><span>+10 ⚡</span></div>
+        </div>
+        <div class="task-item" data-id="d2" data-coins="15" data-xp="8">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">وفّر 20 ريالاً اليوم</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:40%"></div></div>
+              <span class="task-progress-lbl">40%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+15 🪙</span><span>+8 ⚡</span></div>
+        </div>
+        <div class="task-item" data-id="d3" data-coins="10" data-xp="5">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">راجع مصروفات اليوم</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:0%"></div></div>
+              <span class="task-progress-lbl">0%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+10 🪙</span><span>+5 ⚡</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Monthly Tasks ── -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">📆 المهام الشهرية</h2>
+        <span class="section-badge" id="monthly-badge">0 / 3</span>
+      </div>
+      <div class="tasks-list" id="tasks-monthly">
+        <div class="task-item" data-id="m1" data-coins="100" data-xp="50">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">ابقَ ضمن الميزانية الشهرية</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:72%"></div></div>
+              <span class="task-progress-lbl">72%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+100 🪙</span><span>+50 ⚡</span></div>
+        </div>
+        <div class="task-item" data-id="m2" data-coins="80" data-xp="40">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">وفّر 1,000 ريال هذا الشهر</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:50%"></div></div>
+              <span class="task-progress-lbl">50%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+80 🪙</span><span>+40 ⚡</span></div>
+        </div>
+        <div class="task-item" data-id="m3" data-coins="60" data-xp="30">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">سدّد جميع الفواتير في موعدها</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:85%"></div></div>
+              <span class="task-progress-lbl">85%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+60 🪙</span><span>+30 ⚡</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Yearly Tasks ── -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">🏆 المهام السنوية</h2>
+        <span class="section-badge" id="yearly-badge">0 / 3</span>
+      </div>
+      <div class="tasks-list" id="tasks-yearly">
+        <div class="task-item" data-id="y1" data-coins="500" data-xp="250">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">بلّغ هدف الادخار السنوي</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:30%"></div></div>
+              <span class="task-progress-lbl">30%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+500 🪙</span><span>+250 ⚡</span></div>
+        </div>
+        <div class="task-item" data-id="y2" data-coins="400" data-xp="200">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">حافظ على صحة مالية فوق 90%</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:82%"></div></div>
+              <span class="task-progress-lbl">82%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+400 🪙</span><span>+200 ⚡</span></div>
+        </div>
+        <div class="task-item" data-id="y3" data-coins="300" data-xp="150">
+          <div class="task-check" onclick="toggleTask(this)"></div>
+          <div class="task-body">
+            <div class="task-name">قلّل الإنفاق غير الضروري بنسبة 20%</div>
+            <div class="task-progress-wrap">
+              <div class="task-progress"><div class="task-progress-fill" style="width:45%"></div></div>
+              <span class="task-progress-lbl">45%</span>
+            </div>
+          </div>
+          <div class="task-reward"><span>+300 🪙</span><span>+150 ⚡</span></div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- end page-tasks -->
+
+  <!-- ════════════════════════════════════════════
+       PAGE: MY ACCOUNT / PROFILE
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-profile">
+
+    <div class="page-header">
+      <h1 class="page-title">حسابي</h1>
+      <p class="page-sub">معلومات حسابك وملفك الشخصي في Finex</p>
+    </div>
+
+    <!-- Profile card -->
+    <div class="profile-card">
+      <div class="profile-avatar" id="profile-avatar">👤</div>
+      <div class="profile-headline">
+        <div class="profile-name" id="profile-name">مستخدم Finex</div>
+        <div class="profile-email" id="profile-email">—</div>
+        <div class="profile-level-badge">المستوى 7 • 🔥 12 يوم</div>
+      </div>
+    </div>
+
+    <!-- Account info -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">معلومات الحساب</h2>
+        <span class="section-badge">محفوظة بأمان</span>
+      </div>
+      <div class="profile-info-list">
+        <div class="profile-info-row">
+          <span class="pi-label">👤 الاسم الكامل</span>
+          <span class="pi-value" id="pi-name">—</span>
+        </div>
+        <div class="profile-info-row">
+          <span class="pi-label">📧 البريد الإلكتروني</span>
+          <span class="pi-value" id="pi-email">—</span>
+        </div>
+        <div class="profile-info-row">
+          <span class="pi-label">🆔 رقم الهوية</span>
+          <span class="pi-value" id="pi-id">—</span>
+        </div>
+        <div class="profile-info-row">
+          <span class="pi-label">🏦 البنك المرتبط</span>
+          <span class="pi-value" id="pi-bank">—</span>
+        </div>
+        <div class="profile-info-row">
+          <span class="pi-label">💰 الراتب الشهري</span>
+          <span class="pi-value" id="pi-salary">—</span>
+        </div>
+        <div class="profile-info-row">
+          <span class="pi-label">📅 تاريخ الانضمام</span>
+          <span class="pi-value" id="pi-joined">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Account stats -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">إحصائياتي</h2>
+      </div>
+      <div class="profile-stats-grid">
+        <div class="profile-stat">
+          <span class="ps-icon">🪙</span>
+          <div class="ps-val" id="ps-coins">2,450</div>
+          <div class="ps-label">العملات</div>
+        </div>
+        <div class="profile-stat">
+          <span class="ps-icon">⚡</span>
+          <div class="ps-val" id="ps-xp">1,280</div>
+          <div class="ps-label">نقاط XP</div>
+        </div>
+        <div class="profile-stat">
+          <span class="ps-icon">🏘️</span>
+          <div class="ps-val" id="ps-buildings">0</div>
+          <div class="ps-label">عناصر المدينة</div>
+        </div>
+        <div class="profile-stat">
+          <span class="ps-icon">🎯</span>
+          <div class="ps-val" id="ps-goals">0</div>
+          <div class="ps-label">الأهداف</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logout / reset -->
+    <section class="section">
+      <button class="profile-logout-btn" id="profile-logout">تسجيل الخروج وإعادة التسجيل</button>
+    </section>
+
+  </div><!-- end page-profile -->
+
+  <!-- ════════════════════════════════════════════
+       GLOBAL FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="app-footer ob-footer-credit" id="app-footer">
+    صُنع بحب ❤️ من قِبَل <strong>Finex Team</strong> لهاكاثون أمد
+  </footer>
 
   <!-- ════════════════════════════════════════════
        TOAST NOTIFICATION

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finex – إدارة مالية ذكية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════
+       NAV BAR
+  ════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">🌿</div>
+      <span class="nav-title">Finex</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" data-page="home">الرئيسية</button>
+      <button class="nav-btn" data-page="analysis">التحليل المالي</button>
+      <button class="nav-btn" data-page="city">مدينتي</button>
+      <button class="nav-btn" data-page="shop">المتجر</button>
+    </div>
+    <div class="nav-stats">
+      <span class="nav-stat"><span class="stat-icon">🪙</span><span id="nav-coins">2450</span></span>
+      <span class="nav-stat"><span class="stat-icon">⚡</span><span id="nav-xp">1280</span></span>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════
+       PAGE: HOME
+  ════════════════════════════════════════════ -->
+  <div class="page active" id="page-home">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-greeting">مرحباً بعودتك! 👋</div>
+        <h1 class="hero-title">استمر في رحلتك<br/><span class="accent">المالية الذكية</span></h1>
+        <p class="hero-sub">أنت تتقدم بشكل رائع. مدينتك تنمو وعاداتك المالية تتحسن كل يوم.</p>
+        <div class="hero-cta">
+          <button class="btn-primary" data-goto="analysis">📊 التحليل المالي</button>
+          <button class="btn-secondary" data-goto="city">🏘️ مدينتي</button>
+        </div>
+      </div>
+      <div class="hero-illustration">
+        <div class="city-preview-mini" id="hero-city-mini"></div>
+      </div>
+    </section>
+
+    <!-- Stats Row -->
+    <section class="stats-row">
+      <div class="stat-card" id="stat-coins">
+        <div class="stat-card-icon">🪙</div>
+        <div class="stat-card-info">
+          <div class="stat-card-value" id="home-coins">2,450</div>
+          <div class="stat-card-label">عملات</div>
+        </div>
+        <div class="stat-card-trend up">+120 اليوم</div>
+      </div>
+      <div class="stat-card" id="stat-xp">
+        <div class="stat-card-icon">⚡</div>
+        <div class="stat-card-info">
+          <div class="stat-card-value">1,280</div>
+          <div class="stat-card-label">نقاط XP</div>
+        </div>
+        <div class="stat-card-trend up">+40 اليوم</div>
+      </div>
+      <div class="stat-card" id="stat-level">
+        <div class="stat-card-icon">🏆</div>
+        <div class="stat-card-info">
+          <div class="stat-card-value">المستوى 7</div>
+          <div class="stat-card-label">المستوى الحالي</div>
+        </div>
+        <div class="level-bar-wrap">
+          <div class="level-bar"><div class="level-fill" style="width:64%"></div></div>
+          <span class="level-pct">64%</span>
+        </div>
+      </div>
+      <div class="stat-card" id="stat-streak">
+        <div class="stat-card-icon">🔥</div>
+        <div class="stat-card-info">
+          <div class="stat-card-value">12 يوم</div>
+          <div class="stat-card-label">سلسلة الأيام</div>
+        </div>
+        <div class="streak-dots">
+          <span class="dot done"></span><span class="dot done"></span><span class="dot done"></span>
+          <span class="dot done"></span><span class="dot done"></span><span class="dot done"></span>
+          <span class="dot today"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Challenges -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">تحديات اليوم</h2>
+        <span class="section-badge">3 / 5 مكتملة</span>
+      </div>
+      <div class="challenges-grid">
+        <div class="challenge-card done">
+          <div class="ch-icon">✅</div>
+          <div class="ch-info">
+            <div class="ch-name">سجّل مصروفاً</div>
+            <div class="ch-reward">+20 🪙</div>
+          </div>
+        </div>
+        <div class="challenge-card done">
+          <div class="ch-icon">✅</div>
+          <div class="ch-info">
+            <div class="ch-name">راجع ميزانيتك</div>
+            <div class="ch-reward">+30 🪙</div>
+          </div>
+        </div>
+        <div class="challenge-card done">
+          <div class="ch-icon">✅</div>
+          <div class="ch-info">
+            <div class="ch-name">وفّر 5% من راتبك</div>
+            <div class="ch-reward">+50 🪙</div>
+          </div>
+        </div>
+        <div class="challenge-card">
+          <div class="ch-icon">📖</div>
+          <div class="ch-info">
+            <div class="ch-name">اقرأ نصيحة مالية</div>
+            <div class="ch-reward">+15 🪙</div>
+          </div>
+          <button class="ch-btn">ابدأ</button>
+        </div>
+        <div class="challenge-card">
+          <div class="ch-icon">🎯</div>
+          <div class="ch-info">
+            <div class="ch-name">حقق هدفاً أسبوعياً</div>
+            <div class="ch-reward">+100 🪙</div>
+          </div>
+          <button class="ch-btn">ابدأ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Activity -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">آخر النشاطات</h2>
+      </div>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="act-icon green">🌳</div>
+          <div class="act-info">
+            <div class="act-name">اشتريت شجرة في مدينتك</div>
+            <div class="act-time">منذ ساعتين</div>
+          </div>
+          <div class="act-coins red">-80 🪙</div>
+        </div>
+        <div class="activity-item">
+          <div class="act-icon yellow">⚡</div>
+          <div class="act-info">
+            <div class="act-name">أتممت تحدي التوفير اليومي</div>
+            <div class="act-time">منذ 4 ساعات</div>
+          </div>
+          <div class="act-coins green">+50 🪙</div>
+        </div>
+        <div class="activity-item">
+          <div class="act-icon blue">📊</div>
+          <div class="act-info">
+            <div class="act-name">راجعت التحليل المالي</div>
+            <div class="act-time">أمس</div>
+          </div>
+          <div class="act-coins green">+30 🪙</div>
+        </div>
+        <div class="activity-item">
+          <div class="act-icon green">🏠</div>
+          <div class="act-info">
+            <div class="act-name">أضفت منزلاً للمدينة</div>
+            <div class="act-time">أمس</div>
+          </div>
+          <div class="act-coins red">-200 🪙</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section">
+      <div class="quote-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">المال الذي تدخره هو سيدك، والمال الذي تنفقه هو عبدك.</p>
+        <div class="quote-author">— مثل مالي قديم</div>
+      </div>
+    </section>
+
+  </div><!-- end page-home -->
+
+  <!-- ════════════════════════════════════════════
+       PAGE: FINANCIAL ANALYSIS
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-analysis">
+
+    <div class="page-header">
+      <h1 class="page-title">التحليل المالي الذكي</h1>
+      <p class="page-sub">تحليل شامل لعاداتك المالية مدعوم بالذكاء الاصطناعي</p>
+    </div>
+
+    <!-- Health Score -->
+    <section class="section">
+      <div class="health-score-card">
+        <div class="hs-left">
+          <div class="hs-label">نقاط الصحة المالية</div>
+          <div class="hs-score">82</div>
+          <div class="hs-grade excellent">ممتاز 🌟</div>
+          <p class="hs-desc">أنت في أفضل 15% من المستخدمين في فئتك العمرية. استمر على هذا المنوال!</p>
+        </div>
+        <div class="hs-right">
+          <canvas id="gauge-canvas" width="200" height="120"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Budget Allocation -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">توزيع الميزانية</h2>
+        <span class="section-badge">شهر يونيو</span>
+      </div>
+      <div class="analysis-grid">
+        <div class="chart-card">
+          <h3 class="chart-title">الفئات الشهرية</h3>
+          <canvas id="donut-chart" width="280" height="280"></canvas>
+          <div class="chart-legend" id="donut-legend"></div>
+        </div>
+        <div class="metrics-col">
+          <div class="metric-card green-bg">
+            <div class="metric-icon">💰</div>
+            <div class="metric-info">
+              <div class="metric-label">الدخل الشهري</div>
+              <div class="metric-value">8,500 ر.س</div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">🏠</div>
+            <div class="metric-info">
+              <div class="metric-label">الالتزامات الثابتة</div>
+              <div class="metric-value">3,200 ر.س</div>
+            </div>
+            <div class="metric-pct">37.6%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">🛒</div>
+            <div class="metric-info">
+              <div class="metric-label">المصروفات اليومية</div>
+              <div class="metric-value">1,850 ر.س</div>
+            </div>
+            <div class="metric-pct">21.8%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">🎮</div>
+            <div class="metric-info">
+              <div class="metric-label">الترفيه</div>
+              <div class="metric-value">620 ر.س</div>
+            </div>
+            <div class="metric-pct">7.3%</div>
+          </div>
+          <div class="metric-card green-border">
+            <div class="metric-icon">🏦</div>
+            <div class="metric-info">
+              <div class="metric-label">المدخرات</div>
+              <div class="metric-value">1,700 ر.س</div>
+            </div>
+            <div class="metric-pct accent-pct">20%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">🤲</div>
+            <div class="metric-info">
+              <div class="metric-label">الصدقات والزكاة</div>
+              <div class="metric-value">425 ر.س</div>
+            </div>
+            <div class="metric-pct">5%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monthly Trend -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">المدخرات الشهرية</h2>
+        <span class="section-badge">آخر 6 أشهر</span>
+      </div>
+      <div class="chart-card wide">
+        <canvas id="bar-chart" width="700" height="220"></canvas>
+      </div>
+    </section>
+
+    <!-- AI Recommendations -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">توصيات الذكاء الاصطناعي</h2>
+        <div class="ai-badge">🤖 AI</div>
+      </div>
+      <div class="recs-grid">
+        <div class="rec-card positive">
+          <div class="rec-icon">✅</div>
+          <div class="rec-content">
+            <div class="rec-title">نسبة التوفير ممتازة</div>
+            <p class="rec-desc">أنت تدخّر 20% من دخلك، وهو فوق المتوسط الموصى به (15%). هذا يضعك على المسار الصحيح لتحقيق أهدافك.</p>
+          </div>
+        </div>
+        <div class="rec-card warning">
+          <div class="rec-icon">⚠️</div>
+          <div class="rec-content">
+            <div class="rec-title">الترفيه أعلى قليلاً من المثالي</div>
+            <p class="rec-desc">مصاريف الترفيه تمثل 7.3% وهي أعلى بقليل من الموصى به (5%). حاول تقليصها بـ 120 ريال شهرياً لتحسين نسبة التوفير.</p>
+          </div>
+        </div>
+        <div class="rec-card tip">
+          <div class="rec-icon">💡</div>
+          <div class="rec-content">
+            <div class="rec-title">فكرة لنمو الثروة</div>
+            <p class="rec-desc">بناءً على مدخراتك الحالية (1,700 ريال/شهر)، يمكنك الوصول إلى هدف 50,000 ريال خلال 29 شهراً فقط إذا استثمرت 40% منها.</p>
+          </div>
+        </div>
+        <div class="rec-card positive">
+          <div class="rec-icon">🌟</div>
+          <div class="rec-content">
+            <div class="rec-title">الصدقات والزكاة منتظمة</div>
+            <p class="rec-desc">التزامك بتخصيص 5% للصدقات والزكاة يُحسّن صحتك المالية والنفسية معاً. استمر في هذه العادة الرائعة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Motivational -->
+    <section class="motivational-section">
+      <div class="motivational-card">
+        <div class="motiv-emoji">🚀</div>
+        <h3>أنت على بُعد خطوات من المستوى 8!</h3>
+        <p>أكمل 3 تحديات اليوم واكسب 150 عملة لترقية مدينتك وتحقيق المستوى التالي.</p>
+        <button class="btn-primary" data-goto="city">اذهب إلى مدينتي 🏘️</button>
+      </div>
+    </section>
+
+  </div><!-- end page-analysis -->
+
+  <!-- ════════════════════════════════════════════
+       PAGE: MY CITY
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-city">
+    <div class="city-topbar">
+      <div class="city-info">
+        <h2 class="city-name">مدينة النجاح ✨</h2>
+        <span class="city-level">المستوى 7</span>
+      </div>
+      <div class="city-actions">
+        <button class="btn-outline" data-goto="shop">🛒 المتجر</button>
+        <div class="city-coins-badge"><span>🪙</span><span id="city-coins-display">2,450</span></div>
+      </div>
+    </div>
+
+    <div class="city-hint">اسحب لاستكشاف مدينتك 🗺️ • اشترِ عناصر من المتجر لتزيينها</div>
+
+    <div class="city-viewport" id="city-viewport">
+      <div class="city-map" id="city-map">
+        <!-- Canvas for the city background -->
+        <canvas id="city-canvas" width="1600" height="1200"></canvas>
+        <!-- Items placed in the city will be added here as DOM elements -->
+        <div id="city-items-layer"></div>
+      </div>
+    </div>
+  </div><!-- end page-city -->
+
+  <!-- ════════════════════════════════════════════
+       PAGE: SHOP
+  ════════════════════════════════════════════ -->
+  <div class="page" id="page-shop">
+
+    <div class="page-header">
+      <h1 class="page-title">متجر المدينة</h1>
+      <p class="page-sub">اشترِ عناصر جميلة لتزيين مدينتك وتنميتها</p>
+    </div>
+
+    <div class="shop-coins-bar">
+      <span>رصيدك الحالي:</span>
+      <strong>🪙 <span id="shop-coins-display">2,450</span> عملة</strong>
+    </div>
+
+    <div class="shop-grid" id="shop-grid">
+      <!-- filled by JS -->
+    </div>
+
+    <div class="shop-back-wrap">
+      <button class="btn-primary" data-goto="city">← العودة إلى مدينتي</button>
+    </div>
+
+  </div><!-- end page-shop -->
+
+  <!-- ════════════════════════════════════════════
+       TOAST NOTIFICATION
+  ════════════════════════════════════════════ -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

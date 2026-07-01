@@ -51,30 +51,7 @@
           </select>
         </div>
 
-        <!-- ── الأهداف section ── -->
-        <div class="ob-goals-section">
-          <p class="ob-sliders-title">🎯 الأهداف</p>
-          <p class="ob-goals-sub">اختر هدفاً أو أكثر تريد تحقيقه</p>
-          <div class="ob-goals-grid">
-            <label class="ob-goal-chip"><input type="checkbox" value="house" /><span>🏠 شراء منزل</span></label>
-            <label class="ob-goal-chip"><input type="checkbox" value="car" /><span>🚗 شراء سيارة</span></label>
-            <label class="ob-goal-chip"><input type="checkbox" value="travel" /><span>✈️ السفر</span></label>
-            <label class="ob-goal-chip"><input type="checkbox" value="invest" /><span>📈 الاستثمار</span></label>
-            <label class="ob-goal-chip"><input type="checkbox" value="emergency" /><span>🛡️ صندوق طوارئ</span></label>
-            <label class="ob-goal-chip"><input type="checkbox" value="education" /><span>🎓 التعليم</span></label>
-            <label class="ob-goal-chip ob-goal-chip-other"><input type="checkbox" value="other" /><span>✏️ هدف آخر</span></label>
-          </div>
-          <div class="ob-goals-amounts">
-            <div class="ob-field">
-              <label class="ob-label">المبلغ المستهدف شهرياً (ر.س)</label>
-              <input class="ob-input" id="ob-goal-monthly" type="number" placeholder="مثال: 500" min="0" />
-            </div>
-            <div class="ob-field">
-              <label class="ob-label">المبلغ المستهدف سنوياً (ر.س)</label>
-              <input class="ob-input" id="ob-goal-yearly" type="number" placeholder="مثال: 6000" min="0" />
-            </div>
-          </div>
-        </div>
+       
 
         <button class="ob-btn-primary" id="ob-next1">التالي ←</button>
         <p class="ob-error" id="ob-err1"></p>
@@ -82,12 +59,68 @@
         <p class="ob-footer-credit">صُنع بحب ❤️ من قِبَل <strong>Finex Team</strong> لهاكاثون أمد</p>
       </div>
     </div>
-
-    <!-- ── STEP 2: Financial Setup ── -->
+<!-- ── STEP 3: Goals ── -->
     <div class="ob-screen" id="ob-step2">
       <div class="ob-card ob-card-wide">
         <div class="ob-logo">🌿 <span>Finex</span></div>
-        <div class="ob-step-badge">الخطوة 2 من 3</div>
+        <div class="ob-step-badge">الخطوة 2 من 4</div>
+        <h2 class="ob-title">🎯 ما هو هدفك؟</h2>
+        <p class="ob-sub">حدّد هدفك المالي والذكاء الاصطناعي سيضع لك خطة مناسبة</p>
+
+        <div class="ob-field">
+          <label class="ob-label">نوع الهدف</label>
+          <div class="ob-goals-grid">
+            <label class="ob-goal-chip"><input type="radio" name="gtype" value="house"/><span>🏠 شراء منزل</span></label>
+            <label class="ob-goal-chip"><input type="radio" name="gtype" value="car"/><span>🚗 شراء سيارة</span></label>
+            <label class="ob-goal-chip"><input type="radio" name="gtype" value="travel"/><span>✈️ السفر</span></label>
+            <label class="ob-goal-chip"><input type="radio" name="gtype" value="invest"/><span>📈 الاستثمار</span></label>
+            <label class="ob-goal-chip"><input type="radio" name="gtype" value="emergency"/><span>🛡️ صندوق طوارئ</span></label>
+            <label class="ob-goal-chip"><input type="radio" name="gtype" value="education"/><span>🎓 التعليم</span></label>
+            <label class="ob-goal-chip"><input type="radio" name="gtype" value="other"/><span>✏️ هدف آخر</span></label>
+          </div>
+        </div>
+
+        <div class="ob-field">
+          <label class="ob-label">اسم الهدف</label>
+          <input class="ob-input" id="ob-goal-name" type="text" placeholder="مثال: شراء سيارة تيوتا" />
+        </div>
+
+        <div class="ob-goals-amounts">
+          <div class="ob-field">
+            <label class="ob-label">💰 المبلغ المستهدف (ر.س)</label>
+            <input class="ob-input" id="ob-goal-target" type="number" placeholder="مثال: 50000" min="0" />
+          </div>
+          <div class="ob-field">
+            <label class="ob-label">🏦 المدّخر حتى الآن (ر.س)</label>
+            <input class="ob-input" id="ob-goal-saved" type="number" placeholder="مثال: 5000" min="0" />
+          </div>
+        </div>
+
+        <div class="ob-goals-amounts">
+          <div class="ob-field">
+            <label class="ob-label">📅 المدة المستهدفة</label>
+            <select class="ob-select" id="ob-goal-duration">
+              <option value="6">6 أشهر</option>
+              <option value="12" selected>سنة واحدة</option>
+              <option value="24">سنتان</option>
+              <option value="36">3 سنوات</option>
+              <option value="60">5 سنوات</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="ob-btn-primary ob-btn-analyze" id="ob-next2"> التالي </button>
+        <p class="ob-error" id="ob-err2"></p>
+
+        <p class="ob-footer-credit">صُنع بحب ❤️ من قِبَل <strong>Finex Team</strong> لهاكاثون أمد</p>
+      </div>
+    </div>
+
+    <!-- ── STEP 3: Financial Setup ── -->
+    <div class="ob-screen" id="ob-step3">
+      <div class="ob-card ob-card-wide">
+        <div class="ob-logo">🌿 <span>Finex</span></div>
+        <div class="ob-step-badge">الخطوة 3 من 4</div>
         <h2 class="ob-title">إعداد ميزانيتك 💰</h2>
         <p class="ob-sub">أخبرنا عن وضعك المالي لنحلّله بالذكاء الاصطناعي</p>
 
@@ -156,7 +189,7 @@
     </div>
 
     <!-- ── STEP 3: AI Loading ── -->
-    <div class="ob-screen" id="ob-step3">
+    <div class="ob-screen" id="ob-step4">
       <div class="ob-loading-card">
         <div class="ob-spinner"></div>
         <p class="ob-loading-text">جاري تحليل بياناتك باستخدام الذكاء الاصطناعي...</p>
@@ -168,7 +201,7 @@
     </div>
 
     <!-- ── STEP 4: AI Goal Analysis Result ── -->
-    <div class="ob-screen" id="ob-step4">
+    <div class="ob-screen" id="ob-step5">
       <div class="ob-card ob-card-wide">
         <div class="ob-logo">🌿 <span>Finex</span></div>
         <div class="ob-step-badge" style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;">🤖 تحليل الذكاء الاصطناعي</div>
@@ -460,48 +493,48 @@
             <div class="metric-icon">💰</div>
             <div class="metric-info">
               <div class="metric-label">الدخل الشهري</div>
-              <div class="metric-value">8,500 ر.س</div>
-            </div>
+              <div class="metric-value" id="analysis-income">8,500 ر.س</div>           
+             </div>
           </div>
           <div class="metric-card">
             <div class="metric-icon">🏠</div>
             <div class="metric-info">
               <div class="metric-label">الالتزامات الثابتة</div>
-              <div class="metric-value">3,200 ر.س</div>
+              <div class="metric-value" id="analysis-fixed">3,200 ر.س</div>
             </div>
-            <div class="metric-pct">37.6%</div>
+            <div class="metric-pct" id="analysis-fixed-pct">37.6%</div>
           </div>
           <div class="metric-card">
             <div class="metric-icon">🛒</div>
             <div class="metric-info">
               <div class="metric-label">المصروفات اليومية</div>
-              <div class="metric-value">1,850 ر.س</div>
+              <div class="metric-value" id="analysis-daily">1,850 ر.س</div>
             </div>
-            <div class="metric-pct">21.8%</div>
+            <div class="metric-pct" id="analysis-daily-pct">21.8%</div>
           </div>
           <div class="metric-card">
             <div class="metric-icon">🎮</div>
             <div class="metric-info">
               <div class="metric-label">الترفيه</div>
-              <div class="metric-value">620 ر.س</div>
+              <div class="metric-value" id="analysis-entertain">620 ر.س</div>
             </div>
-            <div class="metric-pct">7.3%</div>
+            <div class="metric-pct" id="analysis-entertain-pct">7.3%</div>
           </div>
           <div class="metric-card green-border">
             <div class="metric-icon">🏦</div>
             <div class="metric-info">
               <div class="metric-label">المدخرات</div>
-              <div class="metric-value">1,700 ر.س</div>
+              <div class="metric-value" id="analysis-save">1,700 ر.س</div>
             </div>
-            <div class="metric-pct accent-pct">20%</div>
+            <div class="metric-pct accent-pct" id="analysis-save-pct">20%</div>
           </div>
           <div class="metric-card">
             <div class="metric-icon">🤲</div>
             <div class="metric-info">
               <div class="metric-label">الصدقات والزكاة</div>
-              <div class="metric-value">425 ر.س</div>
+              <div class="metric-value" id="analysis-zakat">425 ر.س</div>
             </div>
-            <div class="metric-pct">5%</div>
+            <div class="metric-pct" id="analysis-zakat-pct">5%</div>
           </div>
         </div>
       </div>
@@ -1037,6 +1070,6 @@
   ════════════════════════════════════════════ -->
   <div class="toast" id="toast"></div>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
